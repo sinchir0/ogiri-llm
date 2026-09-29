@@ -28,6 +28,7 @@ if __name__ == "__main__":
     p.add_argument("--out", default=str(DATA / "cands.jsonl"))
     p.add_argument("--n", type=int, default=64)
     p.add_argument("--limit", type=int)
+    p.add_argument("--temperature", type=float, default=1.1)
     a = p.parse_args()
     topics = [r["topic"] for r in read_jsonl(a.topics)][: a.limit]
-    write_jsonl(a.out, generate(topics, a.model, a.lora, a.n))
+    write_jsonl(a.out, generate(topics, a.model, a.lora, a.n, temperature=a.temperature))

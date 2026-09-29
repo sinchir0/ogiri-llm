@@ -40,3 +40,10 @@ bestofn / eval(Bradley–Terry) / arena(A/B投票UI、投票が prefs.jsonl に�
 - Judge LLM は既視感・長文に甘い偏りがある。人間投票との相関を定期確認
 - 大喜利サイトの無断スクレイピングは避ける。自前/許諾データのみ
 - ディスク逼迫: チェックポイントや不要なキャッシュは随時削除
+
+## 更新 (SFT実施後)
+- 公開データ `iammytoo/japanese-humor-evaluation-v2` のテキストお題・高得点(score>=3.5) 4,407件/929お題で QLoRA SFT (2 epoch, 約11分, loss 2.36→2.06)
+- 生成温度1.1では日本語が崩れる。**温度0.7で崩れが大幅に減り、人間(sinchir0)の主観でもSFTがベースより良い**と判断
+- 基準モデル: Qwen3-8B + ckpt/sft, temperature 0.7
+- 次: ベース/SFTをA/B比較する arena で人間投票 → 選好データ → DPO
+- 注意: 元データはNHK番組由来で権利未確認。研究目的に限る
