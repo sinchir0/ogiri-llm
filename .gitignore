@@ -9,3 +9,4 @@ outputs/
 data/*
 !data/.gitkeep
 !data/sample_*
+*.log
