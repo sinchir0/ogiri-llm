@@ -12,3 +12,8 @@ data/*
 *.log
 !data/train_topics.jsonl
 !data/bench_topics.jsonl
+!data/picks.jsonl
+!data/prefs.jsonl
+!data/battles.jsonl
+!data/old/
+!data/cands_*.jsonl
