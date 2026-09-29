@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+ckpt/
+wandb/
+outputs/
+.env
+# データは規模・権利の都合で既定では管理外。小さなサンプルのみ data/sample_* を追加する
+data/*
+!data/.gitkeep
+!data/sample_*

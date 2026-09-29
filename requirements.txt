@@ -1,0 +1,11 @@
+torch
+transformers
+trl
+peft
+bitsandbytes
+datasets
+accelerate
+vllm
+fastapi
+uvicorn
+numpy
