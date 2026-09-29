@@ -8,7 +8,7 @@ def generate(topics, model, lora=None, n=64, temperature=1.1, top_p=0.95, max_to
     from vllm import LLM, SamplingParams
     from vllm.lora.request import LoRARequest
 
-    llm = LLM(model=model, enable_lora=bool(lora), max_model_len=1024, gpu_memory_utilization=0.9)
+    llm = LLM(model=model, enable_lora=bool(lora), max_lora_rank=64, max_model_len=1024, gpu_memory_utilization=0.9)
     sp = SamplingParams(n=n, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
     msgs = [[{"role": "system", "content": SYSTEM}, {"role": "user", "content": f"お題: {t}"}] for t in topics]
     outs = llm.chat(msgs, sp, lora_request=LoRARequest("l", 1, lora) if lora else None,

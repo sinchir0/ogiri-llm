@@ -22,14 +22,16 @@ def main():
 
     rows = [r for r in filter_train(read_jsonl(a.data)) if r.get("tier", "win") == "win"]
     assert rows, f"no SFT rows in {a.data}"
-    ds = Dataset.from_list([{"messages": chat(r["topic"], r["answer"])} for r in rows])
+    # prompt/completion 形式にして、回答部分のみに損失をかける
+    ds = Dataset.from_list([{"prompt": chat(r["topic"]),
+                             "completion": [{"role": "assistant", "content": r["answer"]}]} for r in rows])
 
     tok = AutoTokenizer.from_pretrained(a.base)
     cfg = SFTConfig(
         output_dir=a.out, num_train_epochs=a.epochs, learning_rate=a.lr,
         per_device_train_batch_size=8, gradient_accumulation_steps=4,
-        lr_scheduler_type="cosine", warmup_ratio=0.03, bf16=True, logging_steps=10,
-        save_strategy="epoch", max_length=512, assistant_only_loss=False,
+        lr_scheduler_type="cosine", warmup_steps=0.03, bf16=True, logging_steps=10,
+        save_strategy="epoch", max_length=512,
         model_init_kwargs=dict(
             torch_dtype=torch.bfloat16,
             quantization_config=BitsAndBytesConfig(
