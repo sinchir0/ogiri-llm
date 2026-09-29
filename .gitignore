@@ -10,3 +10,5 @@ data/*
 !data/.gitkeep
 !data/sample_*
 *.log
+!data/train_topics.jsonl
+!data/bench_topics.jsonl
