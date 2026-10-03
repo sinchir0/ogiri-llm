@@ -146,3 +146,14 @@ bestofn / eval(Bradley–Terry) / arena(A/B投票UI、投票が prefs.jsonl に�
 3. Judgeのマルチモーダル化(画像お題の「的確に絡んでいるか」を判定するには画像を見せる必要がある)
 4. Arenaで画像お題の人間投票も収集(`arena.py`は現状テキストのみ想定のUI、画像表示は未対応)
 5. 本番チェックポイントでの生成品質評価(temperature調整、Elo比較)
+
+## 更新 (本番SFT完了・HFアップロード) 2026-10-03
+
+- 1回目のクラッシュ(前セクション参照)修正後、再実行して **853/853ステップ(1 epoch)完走**。
+  所要時間 約2時間14分。train_loss 3.09、mean_token_accuracy 0.45→0.50。
+- データ: テキスト(iammytoo) 4,407件 + 画像(CLoT-Oogiri-GO ja, win tier) 22,860件 = 27,267件、1epoch。
+- 生成確認(テキストのみ/画像のみ)で、短い日本語の直接回答が出ることを確認済み。
+- 重みを Hugging Face Hub にアップロード: [`sinchir0/ogiri-qwen3.5-9b-sft`](https://huggingface.co/sinchir0/ogiri-qwen3.5-9b-sft) (private)。
+  モデルカードに学習データ・使い方・ライセンス注意事項を記載。
+- `ogiri-demo`サービス(学習中は停止していた)は再起動せず、インスタンスをこのあとdestroyする前提で終了。
+- 残課題(DPOのマルチモーダル対応、Judgeのマルチモーダル化、Arenaの画像対応、品質評価)は上記「次の一手」のまま未着手。次回インスタンスを立てたら、このHF重みとGitHubのコードから再開できる。
