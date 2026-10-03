@@ -15,13 +15,13 @@ def build(src, n, seed=0):
 
 
 def bench_hashes():
-    return {topic_hash(r["topic"]) for r in read_jsonl(DATA / "bench_topics.jsonl")}
+    return {topic_hash(r["topic"], r.get("image")) for r in read_jsonl(DATA / "bench_topics.jsonl")}
 
 
 def filter_train(rows):
     """学習データからベンチお題を除外する(リーク防止)。"""
     bad = bench_hashes()
-    return [r for r in rows if topic_hash(r["topic"]) not in bad]
+    return [r for r in rows if topic_hash(r.get("topic"), r.get("image")) not in bad]
 
 
 if __name__ == "__main__":

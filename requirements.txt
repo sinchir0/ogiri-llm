@@ -1,11 +1,15 @@
 torch
-transformers
+torchvision
+transformers>=5.17.0
 trl
 peft
 bitsandbytes
 datasets
 accelerate
-vllm
+vllm>=0.17.0
 fastapi
 uvicorn
 numpy
+pillow
+huggingface_hub
+python-multipart
