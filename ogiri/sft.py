@@ -34,12 +34,16 @@ def make_collate_fn(processor):
         full_ids, mm_types, prompt_lens, pixels, grids = [], [], [], [], []
         for ex in examples:
             img_path = ex.get("image")
-            msgs = chat(ex.get("topic"), ex["answer"], image=img_path)
-            imgs = [Image.open(img_path).convert("RGB")] if img_path else None
-            full_text = processor.apply_chat_template(msgs, tokenize=False, add_generation_prompt=False)
-            prompt_text = processor.apply_chat_template(msgs[:-1], tokenize=False, add_generation_prompt=True)
-            enc_full = processor(text=[full_text], images=[imgs] if imgs else None, return_tensors="pt")
-            enc_prompt = processor(text=[prompt_text], images=[imgs] if imgs else None, return_tensors="pt")
+            try:
+                msgs = chat(ex.get("topic"), ex["answer"], image=img_path)
+                imgs = [Image.open(img_path).convert("RGB")] if img_path else None
+                full_text = processor.apply_chat_template(msgs, tokenize=False, add_generation_prompt=False)
+                prompt_text = processor.apply_chat_template(msgs[:-1], tokenize=False, add_generation_prompt=True)
+                enc_full = processor(text=[full_text], images=[imgs] if imgs else None, return_tensors="pt")
+                enc_prompt = processor(text=[prompt_text], images=[imgs] if imgs else None, return_tensors="pt")
+            except Exception as e:
+                print(f"[sft] skip broken example (image={img_path}): {e}")
+                continue
             full_ids.append(enc_full["input_ids"][0])
             mm_types.append(enc_full["mm_token_type_ids"][0])
             prompt_lens.append(enc_prompt["input_ids"].shape[1])
@@ -47,8 +51,13 @@ def make_collate_fn(processor):
                 pixels.append(enc_full["pixel_values"])
                 grids.append(enc_full["image_grid_thw"])
 
+        if not full_ids:  # バッチ全件が壊れていた場合、ダミーの空バッチ(loss=0)を返す
+            dummy = torch.zeros((1, 1), dtype=torch.long)
+            return {"input_ids": dummy, "attention_mask": dummy, "mm_token_type_ids": dummy,
+                    "labels": torch.full((1, 1), -100, dtype=torch.long)}
+
         maxlen = max(x.shape[0] for x in full_ids)
-        n = len(examples)
+        n = len(full_ids)
         input_ids = torch.full((n, maxlen), pad_id, dtype=torch.long)
         attention_mask = torch.zeros((n, maxlen), dtype=torch.long)
         mm_token_type_ids = torch.zeros((n, maxlen), dtype=torch.long)

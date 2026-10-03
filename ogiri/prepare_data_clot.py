@@ -16,12 +16,14 @@ import random
 import zipfile
 
 from huggingface_hub import hf_hub_download
+from PIL import Image
 
 from .benchmark import filter_train
 from .common import DATA, write_jsonl
 
 REPO = "zhongshsh/CLoT-Oogiri-GO"
 IMG_DIR = DATA / "images" / "clot"
+MAX_ASPECT_RATIO = 150  # Qwen系processorの上限(200)に対する安全マージン
 
 
 def _star(r):
@@ -44,6 +46,20 @@ def extract_images(ids):
             if not dst.exists():
                 with z.open(f"images/{i}.jpg") as src, open(dst, "wb") as out:
                     out.write(src.read())
+
+
+def valid_image_ids(ids):
+    """壊れた/極端なアスペクト比の画像を除外する(VLMのimage processorが拒否してSFTが落ちるため)。"""
+    ok = set()
+    for i in ids:
+        try:
+            with Image.open(IMG_DIR / f"{i}.jpg") as im:
+                w, h = im.size
+                if max(w, h) / max(1, min(w, h)) < MAX_ASPECT_RATIO:
+                    ok.add(i)
+        except Exception:
+            pass
+    return ok
 
 
 def build(rows, win_frac=0.3, bad_frac=0.3, min_star_for_win=2, seed=0):
@@ -89,6 +105,11 @@ if __name__ == "__main__":
 
     rows = load_rows()
     extract_images(sorted({r["image"] for r in rows}))
+    ok_ids = valid_image_ids({r["image"] for r in rows})
+    dropped = len({r["image"] for r in rows}) - len(ok_ids)
+    if dropped:
+        print(f"画像{dropped}件を不正/極端なアスペクト比のため除外")
+    rows = [r for r in rows if r["image"] in ok_ids]
     sft, prefs = build(rows, a.win_frac, a.bad_frac, a.min_star_for_win)
     sft, prefs = filter_train(sft), filter_train(prefs)  # ベンチお題とのリーク防止(将来の画像ベンチ用)
     write_jsonl(a.sft_out, sft)
