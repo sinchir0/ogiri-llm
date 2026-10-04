@@ -104,6 +104,33 @@ TRL の DPOTrainer ではなく、SFT のコレーター相当を使った自作
 
 > **解釈**: 学習データには完全に過学習 (正解率100%) している。検証は 61〜67% (33ペア) で、偶然 (50%) との差は有意とは言えない。**DPO が SFT より良いという証拠は、現時点ではない。** 確かめるには、新しいお題で SFT 版と DPO 版の出力を並べた追加の人間評価が必要。ペア数を増やすか、epoch を1〜2に抑える/ β を上げる余地がある。
 
+## 4.5 システムプロンプトの設計と参考にした研究
+システムプロンプトの手順 (ありがち → ヒンジ → 遠い世界 → 衝突と理屈 → 具体化) は、ユーモアの理論と、ユーモア生成の研究の要点をまとめた調査メモをもとに、作者が設計した。
+**各論文の手法を再現したものではない**。論文の内容は概要・要旨のレベルで確認しており、手順への対応づけは作者の解釈を含む。
+
+| 手順 | 参考にした考え方 | 出典 |
+|---|---|---|
+| 1. ありがち | 笑いは、観客の予測の形成と、その裏切りから生じる (不調和の検出)。予測を先に明示して回答から除く | Suls (1972) |
+| 3. 遠い世界 / 4. 衝突と理屈 | 2つの意味世界の対立 (Script Opposition) と、それをつなぐ理屈 (Logical Mechanism) | Attardo & Raskin (1991) |
+| 4. 衝突と理屈 | 不調和を「そういうことか」と解消できること (不調和の解消) | Suls (1972) |
+| 4. 衝突と理屈 | 「おかしい (violation)」が「無害 (benign)」と同時に成り立つこと | McGraw & Warren (2010) |
+| 2. ヒンジ / 5. 具体化 | 出典に基づかない、作者の設計 (ずらせる語を探す / 映像が浮かぶ細部にして削る) | - |
+
+学習方針については、次の研究も参考にした。
+
+- **段階的な発想の手順を踏む**: SemEval-2026 Task 1 (MWAHAHA、人間の比較評価でジョーク生成を競う) の参加システム RAGthoven は、Planner → Best-of-N Writer → Reflector → Judge の多段パイプラインで、ユーモア理論 (Benign Violation Theory など) に基づく。本モデルはこれを1回の出力内の短い思考 (5行) に圧縮した形で、推論時の Best-of-N や Judge は含まない。
+- **理論に基づくデータ設計 → SFT**: HumorGen は、心理学のユーモア理論に基づく複数のペルソナで合成データを作って 7B を SFT する。同論文は、DPO と O-GRPO が SFT を上回らなかったと報告している。本モデルでも、DPO が SFT を上回る証拠は得られていない (検証33ペアで有意差なし)。
+- **大喜利データと LoT**: Oogiri-GO データセットと Leap-of-Thought (CLoT) は、本モデルの学習データ (画像お題) の出典。
+
+### 参考文献
+- Attardo, S., & Raskin, V. (1991). Script theory revis(it)ed: Joke similarity and joke representation model. *HUMOR: International Journal of Humor Research*, 4(3-4). (General Theory of Verbal Humor)
+- McGraw, A. P., & Warren, C. (2010). [Benign violations: Making immoral behavior funny](https://leeds-faculty.colorado.edu/mcgrawp/pdf/mcgraw.warren.2010.pdf). *Psychological Science*, 21(8), 1141-1149.
+- Suls, J. M. (1972). A two-stage model for the appreciation of jokes and cartoons: An information-processing analysis. In Goldstein, J. H., & McGhee, P. E. (Eds.), [*The Psychology of Humor*](https://shop.elsevier.com/books/the-psychology-of-humor/goldstein/9780122889509). Academic Press.
+- Zhong, S., Huang, Z., Gao, S., Wen, W., Lin, L., Zitnik, M., & Zhou, P. (2024). [Let's Think Outside the Box: Exploring Leap-of-Thought in Large Language Models with Creative Humor Generation](https://arxiv.org/abs/2312.02439). *CVPR 2024*. (CLoT / Oogiri-GO)
+- Ajayi, E., & Mitra, P. (2026). [HumorGen: Cognitive Synergy for Humor Generation in Large Language Models via Persona-Based Distillation](https://arxiv.org/abs/2604.09629). arXiv:2604.09629.
+- [RAGthoven at SemEval-2026 Task 1: A Multi-Stage Pipeline Walks Into a Benchmark and Barely Clears the Bar](https://arxiv.org/pdf/2607.13189). arXiv:2607.13189.
+- [SemEval 2026 Task 1: MWAHAHA — Models Write Automatic Humor And Humans Annotate](https://www.aclweb.org/portal/node/14303).
+
 ## 5. 既知の限界
 - 評価者は1名。投票数は約100件で、統計的な結論は出せない。
 - 思考は後付けの説明であり、思考の質が回答の質を押し上げているかは未検証 (思考なしSFTとのアブレーションなし)。
