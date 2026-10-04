@@ -155,7 +155,7 @@ Blackwell (sm120) では `VLLM_USE_FLASHINFER_SAMPLER=0` が必要 (FlashInfer �
 テキストのみ / 画像のみ / 画像+テキスト を入力し、SFT・DPO を切り替えて、候補数・温度・思考の表示を指定できる。vLLM + 複数LoRA で、1回の生成は約3秒。
 
 ## 8. モデルの重み
-Hugging Face Hub (private): `sinchir0/ogiri-qwen3.5-9b-proc`
+Hugging Face Hub: [`sinchir0/ogiri-qwen3.5-9b-proc`](https://huggingface.co/sinchir0/ogiri-qwen3.5-9b-proc)
 - ルート: DPO 後の LoRA アダプタ (`dpo_proc`)
 - `sft_proc/`: 手順SFT 後の LoRA アダプタ
 - ベースは `Qwen/Qwen3.5-9B`。推論時は上記の `PROC_SYSTEM` と `enable_thinking=True` を使い、`</think>` 以降を回答として取り出す。
