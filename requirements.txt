@@ -1,15 +1,18 @@
+# 動作確認済みの組み合わせ (2026-10, Python 3.12, CUDA 13 系ホスト)。vllm が torch の版を決める。
 torch
 torchvision
-transformers>=5.17.0
-trl
+transformers==5.18.0
+trl>=1.0
 peft
 bitsandbytes
-datasets
+datasets>=4
 accelerate
-vllm>=0.17.0
+vllm==0.29.0
+flash-linear-attention
 fastapi
 uvicorn
 numpy
 pillow
 huggingface_hub
 python-multipart
+pyyaml

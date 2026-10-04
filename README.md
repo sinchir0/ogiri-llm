@@ -28,6 +28,14 @@
 | e | `python -m ogiri.dpo_proc --init ckpt/sft_proc` | 思考+回答 全体の DPO (画像対応) |
 | f | `python -m ogiri.demo --lora sft=... --lora dpo=...` | デモUI (3種類の入力) |
 
+## デモUIの立ち上げ (新しい Vast.ai インスタンス)
+テキストのみ / 画像のみ / 画像+テキスト を入力して、SFT・DPO を切り替えて試せるUI。重みは [Hugging Face](https://huggingface.co/sinchir0/ogiri-qwen3.5-9b-proc) から取得する。
+```bash
+git clone https://github.com/sinchir0/ogiri-llm.git && cd ogiri-llm && bash deploy/setup_demo.sh
+```
+依存のインストール、モデル取得 (ベース約19GB + LoRA)、supervisor / portal(認証つき外部公開)への登録、起動待ち、3種類の入力でのスモークテスト、URL 表示までを行う。何度実行しても壊れない。
+空き容量 45GB 以上、GPU メモリ 約26GB 以上を推奨。初回はモデル取得と torch.compile で 5〜10 分かかる。
+
 ## データ形式
 - `data/sft.jsonl`: `{"topic": "...", "answer": "...", "tier": "win|ok|bad"}` (tier は任意。`win` のみ SFT に使用)
 - `data/prefs.jsonl`: `{"topic","chosen","rejected","source":"judge|human"}`
