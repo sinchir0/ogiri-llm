@@ -46,7 +46,7 @@ bestofn / eval(Bradley–Terry) / arena(A/B投票UI、投票が prefs.jsonl に�
 - 生成温度1.1では日本語が崩れる。**温度0.7で崩れが大幅に減り、人間(sinchir0)の主観でもSFTがベースより良い**と判断
 - 基準モデル: Qwen3-8B + ckpt/sft, temperature 0.7
 - 次: ベース/SFTをA/B比較する arena で人間投票 → 選好データ → DPO
-- 注意: 元データはNHK番組由来で権利未確認。研究目的に限る
+- 注意: 出典は大喜利サイト keitai / bokete (`YANS-official/ogiri-keitai` 等)。`iammytoo/japanese-humor-evaluation-v2` は Apache 2.0 だが、元コンテンツの権利は未確認のため、研究目的に限る。
 
 ## 更新 (投票結果と現在地) 2026-09-29
 ### A/B投票 (温度0.7, 1お題3案, 35票) — data/old/battles_v1.jsonl

@@ -5,7 +5,7 @@ python -m ogiri.prepare_data
 - SFT: score >= --sft_min の回答
 - 選好: 同一お題内で score >= --hi と score <= --lo を組み合わせ(該当お題のみ)
 - 私(自作)の評価お題と完全一致するお題は除外(リーク防止)
-※元データはNHK番組由来で権利未確認。研究目的に限ること。
+※出典は大喜利サイト keitai / bokete (YANS-official/ogiri-keitai 等)。iammytoo/japanese-humor-evaluation-v2 は Apache 2.0 だが、元コンテンツの権利は未確認のため、研究目的に限ること。
 """
 import argparse
 import collections

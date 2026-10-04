@@ -134,7 +134,7 @@ TRL の DPOTrainer ではなく、SFT のコレーター相当を使った自作
 ## 5. 既知の限界
 - 評価者は1名。投票数は約100件で、統計的な結論は出せない。
 - 思考は後付けの説明であり、思考の質が回答の質を押し上げているかは未検証 (思考なしSFTとのアブレーションなし)。
-- 学習データの出典: iammytoo データは NHK 番組由来で権利が未確認、CLoT-Oogiri-GO の画像は Bokete 由来 (CC BY 4.0 だがサイト規約に従う)。**研究目的に限る。** そのため `data/sft_proc.jsonl` などの学習データはリポジトリに含めない。
+- 学習データの権利: 出典は大喜利サイト keitai / bokete (`YANS-official/ogiri-keitai` 等)。`iammytoo/japanese-humor-evaluation-v2` は Apache 2.0 だが、元コンテンツの権利は未確認のため、研究目的に限る。 CLoT-Oogiri-GO の画像は Bokete 由来 (CC BY 4.0 だがサイト規約に従う)。そのため `data/sft_proc.jsonl` などの学習データはリポジトリに含めない。
 - 生成の不適切な内容は除外していない (投票で選ばれない限り学習に入らないが、モデル自体は出し得る)。
 
 ## 6. 再現手順
