@@ -15,6 +15,19 @@
 | 6 | `python -m ogiri.eval` | 対戦ログから Bradley–Terry / Elo 推定 |
 | 7 | `python -m ogiri.arena` | 人間投票アリーナ(投票が次の選好データになる) |
 
+## 最終的な学習手法 (手順SFT → 人間選好DPO)
+テキスト / 画像 / 画像+テキスト を **1つのモデル** で扱い、回答の前に大喜利の手順 (日本語5行) を `<think>` に書かせる。
+詳細・結果・限界は [docs/TRAINING.md](docs/TRAINING.md)。
+
+| Step | コマンド | 内容 |
+|---|---|---|
+| a | `python -m ogiri.make_rationale` | 高評価回答から思考(5行)を逆算して教師データ作成 |
+| b | `python -m ogiri.sft --proc data/sft_proc.jsonl` | 手順SFT (思考+回答に損失) |
+| c | `python -m ogiri.generate_prompted --conds H_proc` | 4案生成 (思考つき) |
+| d | `python -m ogiri.arena --k 4 --pairs 3 --prefs data/prefs_proc.jsonl` | 人間が選ぶ → 思考つき選好ペア |
+| e | `python -m ogiri.dpo_proc --init ckpt/sft_proc` | 思考+回答 全体の DPO (画像対応) |
+| f | `python -m ogiri.demo --lora sft=... --lora dpo=...` | デモUI (3種類の入力) |
+
 ## データ形式
 - `data/sft.jsonl`: `{"topic": "...", "answer": "...", "tier": "win|ok|bad"}` (tier は任意。`win` のみ SFT に使用)
 - `data/prefs.jsonl`: `{"topic","chosen","rejected","source":"judge|human"}`

@@ -34,12 +34,12 @@ def topic_hash(topic: str | None, image: str | None = None) -> str:
     return hashlib.sha1(key.encode()).hexdigest()[:12]
 
 
-def chat(topic: str | None = None, answer: str | None = None, image: str | None = None):
+def chat(topic: str | None = None, answer: str | None = None, image: str | None = None, system: str = SYSTEM):
     """contentは全role常にblock形式(VLM用)。topicがNoneなら画像のみのお題として扱う。
     (Datasetに混在させる際、role間/行間でcontentの型(str/list)が割れるとpyarrowが落ちるため常にlistにする)"""
     text = f"お題: {topic}" if topic else "この画像で大喜利に回答してください。"
     content = ([{"type": "image", "image": image}] if image else []) + [{"type": "text", "text": text}]
-    m = [{"role": "system", "content": [{"type": "text", "text": SYSTEM}]}, {"role": "user", "content": content}]
+    m = [{"role": "system", "content": [{"type": "text", "text": system}]}, {"role": "user", "content": content}]
     if answer is not None:
         m.append({"role": "assistant", "content": [{"type": "text", "text": answer}]})
     return m

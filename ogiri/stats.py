@@ -1,18 +1,19 @@
-"""picks.jsonl の集計: どのモデル/方向性が選ばれやすいか。  python -m ogiri.stats
-選択率 = 選ばれた回数 / 提示された回数 (ランダムなら 1/6 ≈ 16.7%)
+"""picks.jsonl の集計: どのモデル/方向性が選ばれやすいか。  python -m ogiri.stats [--picks data/picks_vlm.jsonl]
+選択率 = 選ばれた回数 / 提示された回数 (ランダムなら 1/提示数)
 """
+import argparse
 from collections import Counter
 
 from .common import DATA, read_jsonl
 
-K = 6
-
-
 def main():
-    picks = read_jsonl(DATA / "picks.jsonl")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--picks", default=str(DATA / "picks.jsonl"))
+    picks = read_jsonl(ap.parse_args().picks)
     if not picks:
         print("no picks yet")
         return
+    K = sum(len(p["shown"]) for p in picks) / len(picks)  # 平均提示数
     none = sum(p["choice"] < 0 for p in picks)
     print(f"提示 {len(picks)} 件 / 全部微妙 {none} ({none / len(picks):.0%})")
     for key in ("model", "style"):

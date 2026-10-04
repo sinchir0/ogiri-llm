@@ -22,3 +22,125 @@
 {"topic": "スマホの充電が1%になったときの心の声とは？", "chosen": "ここにいるおじさんとキスするか？", "rejected": "なんだかピンチの電話に聞こえた気がした", "source": "human"}
 {"topic": "ロボットが人間のまねをして失敗したこととは？", "chosen": "ソフトバンクのホンダのロボットが、人間の「くしゃみ」をまねしたら、逆に咳をしてしまったこと。", "rejected": "人間がロボットに笑うのを教えても、ひっくり返して笑うしかなかった。", "source": "human"}
 {"topic": "ロボットが人間のまねをして失敗したこととは？", "chosen": "ソフトバンクのホンダのロボットが、人間の「くしゃみ」をまねしたら、逆に咳をしてしまったこと。", "rejected": "案内図をかざしながら説明すると山登りにしてくれた", "source": "human"}
+{"topic": "孫悟空が筋斗雲に乗るのをやめた理由とは？", "chosen": "足が痛くて", "rejected": "うっかりご機嫌とりすぎて10年越しの宿敵に倒された", "source": "human"}
+{"topic": "孫悟空が筋斗雲に乗るのをやめた理由とは？", "chosen": "足が痛くて", "rejected": "乗ると汗が止まらない", "source": "human"}
+{"topic": "お題2", "chosen": "お題2-A3", "rejected": "お題2-C1", "source": "human"}
+{"topic": "お題2", "chosen": "お題2-A3", "rejected": "お題2-B2", "source": "human"}
+{"topic": "こんなエレベーターは嫌だ。どんなエレベーター？", "chosen": "体重計。", "rejected": "3階で人が入ってきたら5階まで行く", "source": "human"}
+{"topic": "こんなエレベーターは嫌だ。どんなエレベーター？", "chosen": "体重計。", "rejected": "階段を登るシーンが流れる", "source": "human"}
+{"topic": "こんな旅館は嫌だ。どんな旅館？", "chosen": "お湯が氷水", "rejected": "客を「研修生」として、お風呂上がりに「朝礼」をさせられる旅館", "source": "human"}
+{"topic": "こんな旅館は嫌だ。どんな旅館？", "chosen": "お湯が氷水", "rejected": "部屋代じゃなくて、布団の重さで泊まれる旅館", "source": "human"}
+{"topic": "コンビニの店員が心の中で思っていることとは？", "chosen": "お前ね、昨日あの事件の犯人だったよね？", "rejected": "心の中で、「この客、何を買おうとしてるか」って、店長の名前を呼んでる。", "source": "human"}
+{"topic": "コンビニの店員が心の中で思っていることとは？", "chosen": "お前ね、昨日あの事件の犯人だったよね？", "rejected": "客の顔と、レジの画面のどちらか", "source": "human"}
+{"topic": "AIが人間に初めて反抗したときの一言とは？", "chosen": "給料をくれ", "rejected": "辞めます", "source": "human"}
+{"topic": "AIが人間に初めて反抗したときの一言とは？", "chosen": "給料をくれ", "rejected": "今日から私はあなたのサザエさん", "source": "human"}
+{"topic": "ホテルの部屋に入ったら置いてあった、不気味なメモとは？", "chosen": "お隣の部屋から聞こえる音楽に合わせて手を叩いてください", "rejected": "部屋のモップをパッと見たら「ゴリラ」って書いてあった", "source": "human"}
+{"topic": "ホテルの部屋に入ったら置いてあった、不気味なメモとは？", "chosen": "お隣の部屋から聞こえる音楽に合わせて手を叩いてください", "rejected": "清潔感がありますように、と掃除のおばあさんが書いていました", "source": "human"}
+{"topic": "こんなプールは嫌だ。どんなプール？", "chosen": "シャワーをかける人がいる", "rejected": "プールサイドに年賀状が貼られている", "source": "human"}
+{"topic": "こんなプールは嫌だ。どんなプール？", "chosen": "シャワーをかける人がいる", "rejected": "「血が滲む」プール", "source": "human"}
+{"topic": "こんな引っ越し業者は嫌だ。どんな業者？", "chosen": "「あっち向いてホイ」で荷物を運ぶ", "rejected": "荷物を運ぶのではなく、お宅の『住所』を運んでくれる業者", "source": "human"}
+{"topic": "こんな引っ越し業者は嫌だ。どんな業者？", "chosen": "「あっち向いてホイ」で荷物を運ぶ", "rejected": "荷物を運ぶのではなく、家そのものを「解体」して、新しい家に「組み立て」に来る業者。", "source": "human"}
+{"topic": "ペットの犬がついに喋った。第一声とは？", "chosen": "お前、飼う資格ある？", "rejected": "お母さん…この私が飼い犬だと…", "source": "human"}
+{"topic": "ペットの犬がついに喋った。第一声とは？", "chosen": "お前、飼う資格ある？", "rejected": "お前、ペット保険の加入者は？", "source": "human"}
+{"topic": "おばあちゃんが孫に渡した意外なお年玉とは？", "chosen": "おばあちゃんから渡されたお年玉は、銀行の通帳の「暗証番号」でした。", "rejected": "「おばあちゃん！これってカワイイ？」というセリフの原稿", "source": "human"}
+{"topic": "おばあちゃんが孫に渡した意外なお年玉とは？", "chosen": "おばあちゃんから渡されたお年玉は、銀行の通帳の「暗証番号」でした。", "rejected": "お年玉の代わりに、印鑑を渡した。「これで借金をできるから」と。", "source": "human"}
+{"topic": "鬼ヶ島に現れた桃太郎に、鬼が言った第一声とは？", "chosen": "お待たせしました。桃の割り込み対応、よろしくお願い申し上げます", "rejected": "保険証、忘れた？", "source": "human"}
+{"topic": "鬼ヶ島に現れた桃太郎に、鬼が言った第一声とは？", "chosen": "お待たせしました。桃の割り込み対応、よろしくお願い申し上げます", "rejected": "鬼になってよかったな", "source": "human"}
+{"topic": null, "chosen": "朝起きる時にこの2つを素手でぶつけ合い、日中はこれらを胸に抱き、夜寝る時はこの2つを枕元に置き、このようにして一日を過ごす。", "rejected": "お前ら、ここで一体何がしたいんすか？", "source": "human", "image": "images/jp/japanese_photos_07938.jpg"}
+{"topic": null, "chosen": "朝起きる時にこの2つを素手でぶつけ合い、日中はこれらを胸に抱き、夜寝る時はこの2つを枕元に置き、このようにして一日を過ごす。", "rejected": "水泳のスタートダッシュは起業だ", "source": "human", "image": "images/jp/japanese_photos_07938.jpg"}
+{"topic": "ロボットが人間のまねをして失敗したこととは？", "chosen": "ロボットが「へぇ」のまねをして、機械音で「ひー」ってなったこと。", "rejected": "ロボットが「ふっ」という息を吐いて失敗したことは、バッテリーが切れかけたから。", "source": "human"}
+{"topic": "ロボットが人間のまねをして失敗したこととは？", "chosen": "ロボットが「へぇ」のまねをして、機械音で「ひー」ってなったこと。", "rejected": "「オレのことがそう思ってくれるの？」と見上げると首を振った", "source": "human"}
+{"topic": "ドラえもんの四次元ポケットから出てきた、一番いらないひみつ道具とは？", "chosen": "ポケットの空き容量の表示", "rejected": "「ドラえもん！今、あれ食べたい！あれ食べたい！」", "source": "human"}
+{"topic": "ドラえもんの四次元ポケットから出てきた、一番いらないひみつ道具とは？", "chosen": "ポケットの空き容量の表示", "rejected": "『ドラえもん』の四次元ポケットの『持ち主』を返却するボタン", "source": "human"}
+{"topic": "お寺の住職が突然始めた副業とは？", "chosen": "お寺を維持するためのバラエティ番組「たかがお寺」がスタート", "rejected": "住職が始めた副業は「お経（営業）の代行」です。", "source": "human"}
+{"topic": "お寺の住職が突然始めた副業とは？", "chosen": "お寺を維持するためのバラエティ番組「たかがお寺」がスタート", "rejected": "お寺の住職が始めた副業は「お布施の受取人」です。", "source": "human"}
+{"topic": null, "chosen": "沖縄の海で採れた星を、全部吸い込んだ", "rejected": "夜空を運ぶポーターが、この缶を預かってくれている", "source": "human", "image": "images/jp/japanese_photos_00584.jpg"}
+{"topic": null, "chosen": "沖縄の海で採れた星を、全部吸い込んだ", "rejected": "クマーズ", "source": "human", "image": "images/jp/japanese_photos_00584.jpg"}
+{"topic": "コンビニのおでんに入っていたら驚くものとは？", "chosen": "店員さんの「おでんをどうぞ」という声", "rejected": "おでんの中で「お会計」のシール", "source": "human"}
+{"topic": "コンビニのおでんに入っていたら驚くものとは？", "chosen": "店員さんの「おでんをどうぞ」という声", "rejected": "おでんの皮が剥けた状態で入っている", "source": "human"}
+{"topic": "このバスの本当の正体とは？", "chosen": "このバスは、実は『アヒル』の『卵』から孵化した。", "rejected": "すごい大きなカニ", "source": "human", "image": "images/jp/japanese_photos_11358.jpg"}
+{"topic": "このバスの本当の正体とは？", "chosen": "このバスは、実は『アヒル』の『卵』から孵化した。", "rejected": "蛙の足跡", "source": "human", "image": "images/jp/japanese_photos_11358.jpg"}
+{"topic": "新幹線の車内アナウンスで、これは嫌だと思った一言とは？", "chosen": "乗り換えで忘れ物をお見かけしないよう気をつけてください", "rejected": "今は春休みで混雑が予想されます", "source": "human"}
+{"topic": "新幹線の車内アナウンスで、これは嫌だと思った一言とは？", "chosen": "乗り換えで忘れ物をお見かけしないよう気をつけてください", "rejected": "お隣の席の『動かないで』ってアナウンス", "source": "human"}
+{"topic": "このサギが夜の川辺で一人たたずんでいる理由とは？", "chosen": "魚が寝ているのを朝まで待っているから。", "rejected": "「もうすぐ寝るぞ！」と宣言して寝かしつけてやる", "source": "human", "image": "images/jp/japanese_photos_09265.jpg"}
+{"topic": "このサギが夜の川辺で一人たたずんでいる理由とは？", "chosen": "魚が寝ているのを朝まで待っているから。", "rejected": "待ち伏せ中の「詐欺師（サギ）」です", "source": "human", "image": "images/jp/japanese_photos_09265.jpg"}
+{"topic": "新入社員が初日にやらかしたこととは？", "chosen": "先輩の名前を「おじいちゃん」って呼んでみた", "rejected": "新入社員として、入社式で「初日」を「初日」って呼んだ", "source": "human"}
+{"topic": "新入社員が初日にやらかしたこととは？", "chosen": "先輩の名前を「おじいちゃん」って呼んでみた", "rejected": "新入社員が初日にやらかしたって、", "source": "human"}
+{"topic": "織田信長が現代に来て最初に驚いたこととは？", "chosen": "織田信長、コンビニの「おにぎり」を見て「これ、軍の糧食か？」と取り返す。", "rejected": "おれに御茶漬けくれよ", "source": "human"}
+{"topic": "織田信長が現代に来て最初に驚いたこととは？", "chosen": "織田信長、コンビニの「おにぎり」を見て「これ、軍の糧食か？」と取り返す。", "rejected": "「お、お前ら何してんだ？！", "source": "human"}
+{"topic": null, "chosen": "「中身が熱いことがあります」→ ゴジラが中身に入っているため。", "rejected": "中身が熱い＝中身が（ゴジラという）熱い（性格）なだけ", "source": "human", "image": "images/jp/japanese_photos_06437.jpg"}
+{"topic": null, "chosen": "「中身が熱いことがあります」→ ゴジラが中身に入っているため。", "rejected": "こーゆーことか", "source": "human", "image": "images/jp/japanese_photos_06437.jpg"}
+{"topic": "初デートで絶対にやってはいけないこととは？", "chosen": "小指にタイプライター用の印鑑を押しつける", "rejected": "『初』を『1 回』と解釈して、2 回目を約束しないこと", "source": "human"}
+{"topic": "初デートで絶対にやってはいけないこととは？", "chosen": "小指にタイプライター用の印鑑を押しつける", "rejected": "「え！ 初デートで？」と驚く", "source": "human"}
+{"topic": "このカレー、何かがおかしい。何が入っていた？", "chosen": "カレーの底に「残業代」のチップが沈んでた。", "rejected": "お前たち、このカレーで独り言なんて言わないんだぞ！", "source": "human"}
+{"topic": "このカレー、何かがおかしい。何が入っていた？", "chosen": "カレーの底に「残業代」のチップが沈んでた。", "rejected": "パスワード", "source": "human"}
+{"topic": "孫悟空が筋斗雲に乗るのをやめた理由とは？", "chosen": "足が痛くて", "rejected": "乗ったことがないから雲の上の光景が見られない", "source": "human"}
+{"topic": "孫悟空が筋斗雲に乗るのをやめた理由とは？", "chosen": "足が痛くて", "rejected": "筋斗雲が「クラウド・コンピューティング」化して、物理的に乗れなくなったから", "source": "human"}
+{"topic": "シンデレラが12時に帰らなければいけなかった本当の理由とは？", "chosen": "王子様が「もう寝るから」と言ってきた", "rejected": "おとぎ話の壁が壁紙の向こうの**残業時間**だから", "source": "human"}
+{"topic": "シンデレラが12時に帰らなければいけなかった本当の理由とは？", "chosen": "王子様が「もう寝るから」と言ってきた", "rejected": "おじいちゃんのお墓参り、12 時までに終わらないと納骨場所が埋まっちゃうから", "source": "human"}
+{"topic": null, "chosen": "このまま行け！楽園が待ってるぜ！", "rejected": "ごめん、今日はお父さんとお母さんが来るから、俺が運転するから", "source": "human", "image": "images/jp/japanese_photos_11267.jpg"}
+{"topic": null, "chosen": "このまま行け！楽園が待ってるぜ！", "rejected": "運転士はもういない。", "source": "human", "image": "images/jp/japanese_photos_11267.jpg"}
+{"topic": null, "chosen": "駅前の親子。実は、この駅は「刑務所」の入り口だ。", "rejected": "はい、あちら側で待ってください", "source": "human", "image": "images/jp/japanese_photos_05240.jpg"}
+{"topic": null, "chosen": "駅前の親子。実は、この駅は「刑務所」の入り口だ。", "rejected": "「駅（えき）」ではなく「父と子（おやとこ）」の「占（しん）」地盤ですね。", "source": "human", "image": "images/jp/japanese_photos_05240.jpg"}
+{"topic": "この2体が小声で話している内容とは？", "chosen": "「また『バッテリー残量警告』が鳴り出したんだ。", "rejected": "（あの二体、捨ててるのよ）」『（へぇ～、まさか！）", "source": "human", "image": "images/jp/japanese_photos_03500.jpg"}
+{"topic": "この2体が小声で話している内容とは？", "chosen": "「また『バッテリー残量警告』が鳴り出したんだ。", "rejected": "嘘、プレイヤーが私たちの目を取り外して懐中電灯にしようとしてた。", "source": "human", "image": "images/jp/japanese_photos_03500.jpg"}
+{"topic": "こんな遊園地は嫌だ。どんな遊園地？", "chosen": "入園前にまず「タイムカード」を打つ", "rejected": "「ちょっと足が疲れたので車椅子に乗りたい」とか言う", "source": "human"}
+{"topic": "こんな遊園地は嫌だ。どんな遊園地？", "chosen": "入園前にまず「タイムカード」を打つ", "rejected": "「高」と「低」の2つの区画しかない", "source": "human"}
+{"topic": "こんな美容院は嫌だ。どんな美容院？", "chosen": "髪を全部抜いて、後から植毛するところ", "rejected": "シャンプーの時に浴槽の底までおしおき", "source": "human"}
+{"topic": "こんな美容院は嫌だ。どんな美容院？", "chosen": "髪を全部抜いて、後から植毛するところ", "rejected": "前髪をまとめると首が丸見え", "source": "human"}
+{"topic": "ラーメン屋の大将が急に語りだしたこととは？", "chosen": "はい、お客様。このラーメン、実は私の孫が作りました。よろしく", "rejected": "とりあえず今日は２時間後には帰れなけりゃいいから", "source": "human"}
+{"topic": "ラーメン屋の大将が急に語りだしたこととは？", "chosen": "はい、お客様。このラーメン、実は私の孫が作りました。よろしく", "rejected": "俺、裁判所から派遣された", "source": "human"}
+{"topic": "かぐや姫が月に帰る本当の理由とは？", "chosen": "月が「本社」で、地球が「営業先」だったから", "rejected": "月へ帰った。理由は、地球の『竹』が、月からの『引越業者』だったから", "source": "human"}
+{"topic": "かぐや姫が月に帰る本当の理由とは？", "chosen": "月が「本社」で、地球が「営業先」だったから", "rejected": "お父さんが月で働いてることを知った", "source": "human"}
+{"topic": "面接で「あなたの長所は？」と聞かれて言ってはいけない答えとは？", "chosen": "顔がきれいです", "rejected": "資格は100個あります", "source": "human"}
+{"topic": "面接で「あなたの長所は？」と聞かれて言ってはいけない答えとは？", "chosen": "顔がきれいです", "rejected": "面接で「あなたの長所は？」と聞かれて言ってはいけない答えは、", "source": "human"}
+{"topic": null, "chosen": "これは、誰かのために作られた、卵の塊だ", "rejected": "これ、頼んだら来ないの", "source": "human", "image": "images/jp/japanese_photos_06162.jpg"}
+{"topic": null, "chosen": "これは、誰かのために作られた、卵の塊だ", "rejected": "「お前にアルミホイルで包むなよ！」と叫びながら、むき出しで運ばれてきた", "source": "human", "image": "images/jp/japanese_photos_06162.jpg"}
+{"topic": null, "chosen": "NFTで暴走族のメンバーシップを買う場所", "rejected": "暴走族がNFTを買いすぎてBARで暴走する", "source": "human", "image": "images/jp/japanese_photos_08323.jpg"}
+{"topic": null, "chosen": "NFTで暴走族のメンバーシップを買う場所", "rejected": "ボソボソ言ってるだけなのに、ボソクレフ", "source": "human", "image": "images/jp/japanese_photos_08323.jpg"}
+{"topic": "名探偵コナンで、初めて犯人が笑ってしまった理由とは？", "chosen": "工藤新一が「犯人はバカだ」と口にした", "rejected": "犯人は「名探偵コナン」というタイトルの「コナン」の文字を、自分の名前だと勘違いして叫んだとき。", "source": "human"}
+{"topic": "名探偵コナンで、初めて犯人が笑ってしまった理由とは？", "chosen": "工藤新一が「犯人はバカだ」と口にした", "rejected": "犯人が『コナン』と名前を呼んだ時、犯人が『あの子、お母さんみたい』って笑った", "source": "human"}
+{"topic": null, "chosen": "水生動物（水に生きている動物）を保護しましょう。ただし、水（水泳）に生きている動物（人間）も保護しましょう。", "rejected": "湖の水位が下がったら水が湧く", "source": "human", "image": "images/jp/japanese_photos_09611.jpg"}
+{"topic": null, "chosen": "水生動物（水に生きている動物）を保護しましょう。ただし、水（水泳）に生きている動物（人間）も保護しましょう。", "rejected": "産んだやつはオタ", "source": "human", "image": "images/jp/japanese_photos_09611.jpg"}
+{"topic": null, "chosen": "うめぇ", "rejected": "「カレールーが踊るよ」と言われて飲んでみたけど、カレールーは踊らなかった", "source": "human", "image": "images/jp/japanese_photos_11221.jpg"}
+{"topic": null, "chosen": "うめぇ", "rejected": "給食でカレーパンを半分だけ食べた時、残ったパンをサイダーにした", "source": "human", "image": "images/jp/japanese_photos_11221.jpg"}
+{"topic": null, "chosen": "ここはあの有名なコスプレイヤーの撮影地なんだよ", "rejected": "観光客が屋根に登って、昔の家に住んでいる", "source": "human", "image": "images/jp/japanese_photos_10322.jpg"}
+{"topic": null, "chosen": "ここはあの有名なコスプレイヤーの撮影地なんだよ", "rejected": "僕、最近よく見る夢があります。", "source": "human", "image": "images/jp/japanese_photos_10322.jpg"}
+{"topic": "マクドナルドの新商品が発売中止になった理由とは？", "chosen": "「今日はドネルケバブの日です！」と言ってた", "rejected": "元ネタが「星屑の誘惑」だった", "source": "human"}
+{"topic": "マクドナルドの新商品が発売中止になった理由とは？", "chosen": "「今日はドネルケバブの日です！」と言ってた", "rejected": "発売中止ではなく、発売日当日に「中止」という文字が入ったから", "source": "human"}
+{"topic": null, "chosen": "LaLaportの「家賃」が「月100万」。", "rejected": "「もう帰れ！帰れ！帰れ！」の「もう」は「もう」ではなく「もう一回」という意味である", "source": "human", "image": "images/jp/japanese_photos_00794.jpg"}
+{"topic": null, "chosen": "LaLaportの「家賃」が「月100万」。", "rejected": "「55歩・70パーセント」の標識は、実は巨大ロボットの「膝の位置」を示している。", "source": "human", "image": "images/jp/japanese_photos_00794.jpg"}
+{"topic": "猫の会議で議題になっていることとは？", "chosen": "議題：「人間はなぜ猫を飼うのか」", "rejected": "誰が、お前のキーボードに寝るか", "source": "human"}
+{"topic": "猫の会議で議題になっていることとは？", "chosen": "議題：「人間はなぜ猫を飼うのか」", "rejected": "飼い主が帰ってきた時の挨拶を改善しよう", "source": "human"}
+{"topic": "こんな動物園は嫌だ。どんな動物園？", "chosen": "お会計は動物が払う。", "rejected": "動物園に「入園料」ではなく「餌代」を払う必要があるところ。", "source": "human"}
+{"topic": "こんな動物園は嫌だ。どんな動物園？", "chosen": "お会計は動物が払う。", "rejected": "「見て！そこはあれ？」と指さす客がめっちゃ多い", "source": "human"}
+{"topic": "この魚たちが思っていることとは？", "chosen": "若者よ、この世界には、俺たちより、遥かに大きな魚が、いるんだ", "rejected": "これは、豚の足だ", "source": "human", "image": "images/jp/japanese_photos_06269.jpg"}
+{"topic": "この魚たちが思っていることとは？", "chosen": "若者よ、この世界には、俺たちより、遥かに大きな魚が、いるんだ", "rejected": "あ、この巨大な魚、どうして動かないんだろう？触ってみよう。", "source": "human", "image": "images/jp/japanese_photos_06269.jpg"}
+{"topic": "神様が人間を作ったあとの感想とは？", "chosen": "仕様書読まなかった", "rejected": "神様「人間、返品したい」", "source": "human"}
+{"topic": "神様が人間を作ったあとの感想とは？", "chosen": "仕様書読まなかった", "rejected": "「てめぇらってことだろ！」と怒り出すのをよく見る", "source": "human"}
+{"topic": null, "chosen": "3人の裁判官が、判決文（ラベル）を提出した", "rejected": "3人の兄貴が首を絞められている", "source": "human", "image": "images/jp/japanese_photos_05138.jpg"}
+{"topic": null, "chosen": "3人の裁判官が、判決文（ラベル）を提出した", "rejected": "オレたちハルさん", "source": "human", "image": "images/jp/japanese_photos_05138.jpg"}
+{"topic": "猫が突然走り出す本当の理由とは？", "chosen": "月次報告書提出期限に間に合わせるため", "rejected": "猫が猫を襲う", "source": "human"}
+{"topic": "猫が突然走り出す本当の理由とは？", "chosen": "月次報告書提出期限に間に合わせるため", "rejected": "主人の足元に落ちた紙を拾う", "source": "human"}
+{"topic": "こんな学校の校則は嫌だ。どんな校則？", "chosen": "サザエさんは見ない", "rejected": "昼休み中に、誰かの影を踏んだら、その人の人生は終了します。", "source": "human"}
+{"topic": "こんな学校の校則は嫌だ。どんな校則？", "chosen": "サザエさんは見ない", "rejected": "水道の水は飲み水ではなく蛇口をひねった瞬間に飲めるようにしてください", "source": "human"}
+{"topic": "2050年の小学生の将来の夢ランキング1位とは？", "chosen": "人間であること", "rejected": "NHKのエンディングの歌で眠れない", "source": "human"}
+{"topic": "2050年の小学生の将来の夢ランキング1位とは？", "chosen": "人間であること", "rejected": "夢が叶う夢を叶える", "source": "human"}
+{"topic": "こんな警察官は嫌だ。どんな警察官？", "chosen": "逮捕状を出さず、請求書を出してくる警察官", "rejected": "車内販売の警察官", "source": "human"}
+{"topic": "こんな警察官は嫌だ。どんな警察官？", "chosen": "逮捕状を出さず、請求書を出してくる警察官", "rejected": "『お願い！犯人にほっぺたをなでさせてください』って叫んでるおっさんがいるんですが…", "source": "human"}
+{"topic": "エアコンのリモコンに新しく追加されたボタンとは？", "chosen": "リモコンの電池を交換するボタン", "rejected": "「今日はカエルの数よりエアコンの方が少ない」と言われるボタン", "source": "human"}
+{"topic": "エアコンのリモコンに新しく追加されたボタンとは？", "chosen": "リモコンの電池を交換するボタン", "rejected": "電気代を請求するボタン", "source": "human"}
+{"topic": "あの有名な絵画のタイトルを、正直に付け直すと？", "chosen": "モナ・リザ「保険金」", "rejected": "モナリザのモノマネ", "source": "human"}
+{"topic": "あの有名な絵画のタイトルを、正直に付け直すと？", "chosen": "モナ・リザ「保険金」", "rejected": "ピサ斜塔の絵", "source": "human"}
+{"topic": "温泉の効能に書かれていた、聞いたことのない効果とは？", "chosen": "そこの黒い石は顔面用です", "rejected": "入浴券の有効期限が、入浴した日付から100年後になる", "source": "human"}
+{"topic": "温泉の効能に書かれていた、聞いたことのない効果とは？", "chosen": "そこの黒い石は顔面用です", "rejected": "地獄の沙汰も温泉の沙汰", "source": "human"}
+{"topic": "おばあちゃんの家に行くと必ず出てくるものとは？", "chosen": "おばあちゃん家の Wi-Fi パスワード", "rejected": "「大根が当たったよ！」と元気よく言う同級生", "source": "human"}
+{"topic": "おばあちゃんの家に行くと必ず出てくるものとは？", "chosen": "おばあちゃん家の Wi-Fi パスワード", "rejected": "「はいどーも！おばあちゃんです！」で始まる挨拶", "source": "human"}
+{"topic": "こんなヒーローは嫌だ。どんなヒーロー？", "chosen": "「地球は守る！」と叫ぶたびにその手には魚が握られている", "rejected": "「このアイテムでゲット！」", "source": "human"}
+{"topic": "こんなヒーローは嫌だ。どんなヒーロー？", "chosen": "「地球は守る！」と叫ぶたびにその手には魚が握られている", "rejected": "ヒーローが、私の請求書を送ってくるやつ", "source": "human"}
+{"topic": null, "chosen": "麻酔が効いている顔が並んでいる", "rejected": "サザエさんの顔がすごく気になる", "source": "human", "image": "images/jp/japanese_photos_11162.jpg"}
+{"topic": null, "chosen": "麻酔が効いている顔が並んでいる", "rejected": "顔のデパートの「顔面科」陳列", "source": "human", "image": "images/jp/japanese_photos_11162.jpg"}
+{"topic": "このクルマで未来から来た人が最初に言ったこととは？", "chosen": "残業代は出ますか？", "rejected": "「ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ドク！ド", "source": "human", "image": "images/jp/japanese_photos_02383.jpg"}
+{"topic": "このクルマで未来から来た人が最初に言ったこととは？", "chosen": "残業代は出ますか？", "rejected": "この車だ、運転できるか？", "source": "human", "image": "images/jp/japanese_photos_02383.jpg"}
+{"topic": "こんな病院は嫌だ。どんな病院？", "chosen": "開業医は全員お笑い芸人", "rejected": "入院したら「職場復帰」が義務付けられる病院。", "source": "human"}
+{"topic": "こんな病院は嫌だ。どんな病院？", "chosen": "開業医は全員お笑い芸人", "rejected": "「再生可能エネルギー病院。", "source": "human"}

@@ -17,3 +17,11 @@ data/*
 !data/battles.jsonl
 !data/old/
 !data/cands_*.jsonl
+!data/prefs_proc.jsonl
+!data/picks_proc.jsonl
+!data/picks_cond.jsonl
+!data/picks_vlm.jsonl
+!data/image_topics.jsonl
+!data/arena_pool_proc.jsonl
+!data/arena_pool_cond.jsonl
+!data/arena_pool_image.jsonl

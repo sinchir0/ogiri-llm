@@ -14,9 +14,19 @@ from transformers import AutoModelForImageTextToText, AutoProcessor
 from trl import SFTConfig, SFTTrainer
 
 from .benchmark import filter_train
+import random
+
 from .common import BASE_MODEL, DATA, chat, read_jsonl
+from .prompts import PROC_SYSTEM
 
 TARGET_MODULES = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+
+def load_proc_rows(path, seed=0):
+    rows = filter_train(read_jsonl(path))
+    assert rows, f"no proc rows in {path}"
+    random.Random(seed).shuffle(rows)  # テキスト/画像を混ぜる(--limit で偏らないように)
+    return rows
 
 
 def load_rows(data, data_clot):
@@ -35,10 +45,17 @@ def make_collate_fn(processor):
         for ex in examples:
             img_path = ex.get("image")
             try:
-                msgs = chat(ex.get("topic"), ex["answer"], image=img_path)
                 imgs = [Image.open(img_path).convert("RGB")] if img_path else None
-                full_text = processor.apply_chat_template(msgs, tokenize=False, add_generation_prompt=False)
-                prompt_text = processor.apply_chat_template(msgs[:-1], tokenize=False, add_generation_prompt=True)
+                if ex.get("think"):  # 手順SFT: プロンプトは "<think>\n" で終わり、思考+回答を教師にする
+                    msgs = chat(ex.get("topic"), None, image=img_path, system=PROC_SYSTEM)
+                    prompt_text = processor.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True,
+                                                                enable_thinking=True)
+                    assert prompt_text.endswith("<think>\n"), prompt_text[-40:]
+                    full_text = prompt_text + f"{ex['think']}\n</think>\n\n{ex['answer']}<|im_end|>\n"
+                else:
+                    msgs = chat(ex.get("topic"), ex["answer"], image=img_path)
+                    full_text = processor.apply_chat_template(msgs, tokenize=False, add_generation_prompt=False)
+                    prompt_text = processor.apply_chat_template(msgs[:-1], tokenize=False, add_generation_prompt=True)
                 enc_full = processor(text=[full_text], images=[imgs] if imgs else None, return_tensors="pt")
                 enc_prompt = processor(text=[prompt_text], images=[imgs] if imgs else None, return_tensors="pt")
             except Exception as e:
@@ -83,17 +100,20 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--data", default=str(DATA / "sft.jsonl"))
     p.add_argument("--data_clot", default=str(DATA / "sft_clot.jsonl"))
+    p.add_argument("--proc", help="手順SFTデータ(data/sft_proc.jsonl)。指定時は --data/--data_clot を使わない")
+    p.add_argument("--save_steps", type=int, default=0, help=">0 なら N ステップごとに保存(クラッシュ対策)")
     p.add_argument("--base", default=BASE_MODEL)
     p.add_argument("--out", default="ckpt/sft")
     p.add_argument("--epochs", type=float, default=2)
     p.add_argument("--lr", type=float, default=1e-4)
     p.add_argument("--batch_size", type=int, default=8)
     p.add_argument("--grad_accum", type=int, default=4)
+    p.add_argument("--no_grad_ckpt", action="store_true", help="勾配チェックポイントを切る(メモリを使って高速化)")
     p.add_argument("--limit", type=int, help="デバッグ用: 先頭N件のみ使う")
     a = p.parse_args()
 
-    rows = load_rows(a.data, a.data_clot)[: a.limit]
-    examples = [{"topic": r.get("topic"), "answer": r["answer"],
+    rows = (load_proc_rows(a.proc) if a.proc else load_rows(a.data, a.data_clot))[: a.limit]
+    examples = [{"topic": r.get("topic"), "answer": r["answer"], "think": r.get("think"),
                  "image": str(DATA / r["image"]) if r.get("image") else None} for r in rows]
     ds = Dataset.from_list(examples)
 
@@ -103,7 +123,8 @@ def main():
         output_dir=a.out, num_train_epochs=a.epochs, learning_rate=a.lr,
         per_device_train_batch_size=a.batch_size, gradient_accumulation_steps=a.grad_accum,
         lr_scheduler_type="cosine", warmup_steps=0.03, bf16=True, logging_steps=10,
-        save_strategy="epoch", gradient_checkpointing=True,
+        save_strategy="steps" if a.save_steps else "epoch", save_steps=a.save_steps or 500,
+        save_total_limit=2, gradient_checkpointing=not a.no_grad_ckpt,
         gradient_checkpointing_kwargs={"use_reentrant": False},
         dataset_kwargs={"skip_prepare_dataset": True}, remove_unused_columns=False,
     )
